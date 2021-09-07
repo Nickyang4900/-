@@ -8,7 +8,7 @@
 using namespace std;
 #pragma warning(disable:4996)
 
-int period = 25;
+int period = 1000*60*25;
 
 void addTomato() {
 	int count;
@@ -20,9 +20,9 @@ void addTomato() {
 	infile.close();
 
 	count += 1;
-	cout <<"\n±¾ÈÕÒÑÔÔÅà·¬ÇÑ£º"<< count; 
+	cout <<"\næœ¬æ—¥å·²æ ½åŸ¹ç•ªèŒ„ï¼š"<< count; 
 
-	outfile.open("f:/cppfiles/clock/project1/num_tomato.txt", ios::out);
+	outfile.open("your_path/num_tomato.txt", ios::out);
 	outfile << count;
 	outfile.close();
 }
@@ -37,18 +37,18 @@ void checkDay() {
 	ofstream outfile;
 
 	int last_day;
-	infile.open("f:/cppfiles/clock/project1/num_weekday.txt", ios::in);
+	infile.open("your_path/num_weekday.txt", ios::in);
 	infile >> last_day;
 	infile.close();
 
 	if (last_day != day) {
-		std::cout << "\nÐÂÒ»Ìì¿ªÊ¼ÁË£¬ÒªÔªÆøÂúÂú£¡" << std::endl;
+		std::cout << "\næ–°ä¸€å¤©å¼€å§‹äº†ï¼Œè¦å…ƒæ°”æ»¡æ»¡ï¼" << std::endl;
 
-		outfile.open("f:/cppfiles/clock/project1/num_weekday.txt", ios::out);
+		outfile.open("your_path/num_weekday.txt", ios::out);
 		outfile << day;
 		outfile.close();
 
-		outfile.open("f:/cppfiles/clock/project1/num_tomato.txt", ios::out);
+		outfile.open("your_path/num_tomato.txt", ios::out);
 		outfile << 0;
 		outfile.close();
 	}
@@ -59,25 +59,25 @@ int main()
 {
 	char flag;
 	std::cout << "***************************" << std::endl;
-	std::cout << "**********·¬ÇÑÊ±¼ä**********" << std::endl;
+	std::cout << "**********ç•ªèŒ„æ—¶é—´**********" << std::endl;
 	std::cout << "***************************"<<std::endl;
 	
 	checkDay();
 	
-	std::cout << "\n°´Enter¼üÒÔ¿ªÊ¼ÅàÓý·¬ÇÑ..." << std::endl;
+	std::cout << "\næŒ‰Enteré”®ä»¥å¼€å§‹åŸ¹è‚²ç•ªèŒ„..." << std::endl;
 	flag = getchar();
 
 	while(true)
 	{
 		system("cls");
-		std::cout << "\n\n·¬ÇÑÔÔÅàÖÐ..." << std::endl;
+		std::cout << "\n\nç•ªèŒ„æ ½åŸ¹ä¸­..." << std::endl;
 
 		Sleep(period);
 
 		system("cls");
-		MessageBox(NULL, "·¬ÇÑÊ±¼ä Íê³É!", "ÏûÏ¢", MB_ICONASTERISK);
+		MessageBox(NULL, "ç•ªèŒ„æ—¶é—´ å®Œæˆ!", "æ¶ˆæ¯", MB_ICONASTERISK);
 		addTomato();
-		std::cout << "\n\n°´Enter¼ÌÐø²¥ÖÖÐÂµÄ·¬ÇÑ..." << std::endl;
+		std::cout << "\n\næŒ‰Enterç»§ç»­æ’­ç§æ–°çš„ç•ªèŒ„..." << std::endl;
 		
 		flag = getchar();
 	}
