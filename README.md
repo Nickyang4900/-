@@ -20,6 +20,7 @@
 - 💸
 
 ## 使用注意
-- 自行设置period
-- 记得更改root path
-- 建议改个好看的图标, 这里提供一个tomato.ico
+- 编译用的VS2019
+- 源码中设置period 和 root path
+- 用了两个.txt文件在本地计数
+- 建议图标tomato.ico
